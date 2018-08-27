@@ -4,7 +4,7 @@ namespace RestSharpFramework.Builders
 {
     public class RequestBuilder
     {
-        private const string PRIVATE_TOKEN = "nwbUTeaSRo13QpKsdn2x";
+        private const string PRIVATE_TOKEN = "UpdateToYourOwn_nwbUTeaSRo13QpKsdn2x123";
 
         public static RestRequest GetNamespaceRequest()
         {
