@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RestSharp")]
+[assembly: AssemblyTitle("RestSharpFramework")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RestSharp")]
+[assembly: AssemblyProduct("RestSharpFramework")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2a850fc3-cb24-4663-b5dc-1d357a26a4bc")]
+[assembly: Guid("724845a3-ec68-4d9a-91d7-5511f0edb577")]
 
 // Version information for an assembly consists of the following four values:
 //

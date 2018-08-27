@@ -63,8 +63,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RestSharp\RestSharpFramework.csproj">
-      <Project>{2a850fc3-cb24-4663-b5dc-1d357a26a4bc}</Project>
+    <ProjectReference Include="..\RestSharpFramework\RestSharpFramework.csproj">
+      <Project>{724845a3-ec68-4d9a-91d7-5511f0edb577}</Project>
       <Name>RestSharpFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestRunner\TestRunner.csproj">
