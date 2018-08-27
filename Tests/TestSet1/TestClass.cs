@@ -1,7 +1,7 @@
 ﻿
 using NUnit.Framework;
 using RestSharp;
-using RestSharpFramework.Builders;
+using RestSharpFramework.Factories;
 
 namespace Tests.TestSet1
 {
@@ -10,8 +10,8 @@ namespace Tests.TestSet1
         [Test]
         public void TestGetNamespace()
         {
-            RestClient Client = ClientBuilder.GitLabClient();
-            RestRequest GetRequest = RequestBuilder.GetNamespaceRequest();
+            RestClient Client = ClientFactory.GitLabClient();
+            RestRequest GetRequest = RequestFactory.GetNamespaceRequest();
             RestResponse RestResponse = (RestResponse)Client.Execute(GetRequest);
             string statusCode = ((int)RestResponse.StatusCode).ToString();
             Assert.AreEqual("200", statusCode);
@@ -20,8 +20,8 @@ namespace Tests.TestSet1
         [Test]
         public void TestGetNamespaceFailed()
         {
-            RestClient Client = ClientBuilder.GitLabClient();
-            RestRequest GetRequest = RequestBuilder.GetNamespaceRequest();
+            RestClient Client = ClientFactory.GitLabClient();
+            RestRequest GetRequest = RequestFactory.GetNamespaceRequest();
             RestResponse RestResponse = (RestResponse)Client.Execute(GetRequest);
             string statusCode = ((int)RestResponse.StatusCode).ToString();
             Assert.AreEqual("201", statusCode);

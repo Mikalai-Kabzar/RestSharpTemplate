@@ -1,10 +1,10 @@
 ﻿using RestSharp;
 
-namespace RestSharpFramework.Builders
+namespace RestSharpFramework.Factories
 {
-    public class RequestBuilder
-    {
-        private const string PRIVATE_TOKEN = "UpdateToYourOwn_nwbUTeaSRo13QpKsdn2x123";
+    public class RequestFactory
+	{
+        private const string PRIVATE_TOKEN = "nwbUTeaSRo13QpKsdn2x";
 
         public static RestRequest GetNamespaceRequest()
         {
