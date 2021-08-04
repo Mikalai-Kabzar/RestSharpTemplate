@@ -8,7 +8,6 @@ namespace RestSharpFramework.Factories
 
         public static RestClient GitLabClient() => new RestClient(GITLAB_URL)
         {
-
         };
     }
 

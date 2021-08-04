@@ -8,8 +8,10 @@ namespace RestSharpFramework.Factories
 
         public static RestRequest GetNamespaceRequest()
         {
-            RestRequest RestRequest = new RestRequest("namespaces");
-            RestRequest.Method = Method.GET;
+            RestRequest RestRequest = new RestRequest("namespaces")
+            {
+                Method = Method.GET
+            };
             RestRequest.AddHeader("Private-Token", PRIVATE_TOKEN);
             return RestRequest;
         }
