@@ -1,2 +1,2 @@
 # RestSharpTemplate
-Template framework for AQA Maestro training with RestSharp
+Template framework for AQA training with RestSharp
