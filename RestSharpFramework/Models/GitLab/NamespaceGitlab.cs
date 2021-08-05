@@ -1,4 +1,4 @@
-﻿namespace RestSharpFramework.BusinessObjects
+﻿namespace RestSharpFramework.Models.GitLab
 {
     public class NamespaceGitlab
     {
