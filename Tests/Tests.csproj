@@ -87,11 +87,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseTestClassTheDogAPI.cs" />
+    <Compile Include="BaseTestClassGitLab.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseTestClass.cs" />
-    <Compile Include="TestSet1\TestClassFluentAssertion.cs" />
-    <Compile Include="TestSet1\TestClassNunitAssertion.cs" />
+    <Compile Include="TestSetTheDogAPI\VoteTests.cs" />
+    <Compile Include="TestSetTheDogAPI\SearchForBreedsByNameTest.cs" />
+    <Compile Include="TestSetTheDogAPI\GetListOfBreedsTests.cs" />
+    <Compile Include="TestSetGitLab\FluentAssertionTests.cs" />
+    <Compile Include="TestSetGitLab\NunitAssertionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

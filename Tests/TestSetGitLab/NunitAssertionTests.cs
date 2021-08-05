@@ -1,13 +1,13 @@
 ﻿using NUnit.Framework;
 using RestSharp;
-using RestSharpFramework.BusinessObjects;
+using RestSharpFramework.Models.GitLab;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 
-namespace Tests.TestSet1
+namespace Tests.TestSetGitLab
 {
-    internal class TestClassNunitAssertion : BaseTestClass
+    internal class NunitAssertionTests : BaseTestClassGitLab
     {
         private readonly string expectedContentType = "application/json";
         private readonly string namespaceName = "Mikalai kabzar";

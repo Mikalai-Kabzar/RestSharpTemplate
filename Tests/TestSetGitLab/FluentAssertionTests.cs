@@ -2,14 +2,14 @@
 using FluentAssertions.Execution;
 using NUnit.Framework;
 using RestSharp;
-using RestSharpFramework.BusinessObjects;
+using RestSharpFramework.Models.GitLab;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 
-namespace Tests.TestSet1
+namespace Tests.TestSetGitLab
 {
-    internal class TestClassFluentAssertion : BaseTestClass
+    internal class FluentAssertionTests : BaseTestClassGitLab
     {
         private readonly string expectedContentType = "application/json";
         private readonly string namespaceName = "Mikalai kabzar";
