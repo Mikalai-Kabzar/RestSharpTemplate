@@ -1,20 +1,22 @@
-﻿namespace RestSharpFramework.Models.GitLab
+﻿using System.Text.Json.Serialization;
+
+namespace RestSharpFramework.Models.GitLab
 {
     public class NamespaceGitlab
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string path { get; set; }
-        public string kind { get; set; }
-        public string full_path { get; set; }
-        public object parent_id { get; set; }
-        public string avatar_url { get; set; }
-        public string web_url { get; set; }
-        public int billable_members_count { get; set; }
-        public int seats_in_use { get; set; }
-        public int max_seats_used { get; set; }
-        public string plan { get; set; }
-        public object trial_ends_on { get; set; }
-        public bool trial { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Path { get; set; }
+        public string Kind { get; set; }
+        public string FullPath { get; set; }
+        public object ParentId { get; set; }
+        public string AvatarUrl { get; set; }
+        public string WebUrl { get; set; }
+        public int BillableMembersCount { get; set; }
+        public int SeatsInUse { get; set; }
+        public int MaxSeatsUsed { get; set; }
+        public string Plan { get; set; }
+        public object TrialEndsOn { get; set; }
+        public bool Trial { get; set; }
     }
 }

@@ -28,11 +28,11 @@ namespace Tests.TestSetGitLab
             Assert.AreEqual(HttpStatusCode.OK, actualStatusCode);
             Assert.AreEqual(expectedContentType, actualContentType);
             Assert.AreEqual(namespacesNumber, namespaceList.Count);
-            Assert.AreEqual(namespaceName, actualNamespace.name);
+            Assert.AreEqual(namespaceName, actualNamespace.Name);
         }
 
         [Test]
-        public void TestGetNamespaceFailed()
+        public void TestGetNamespaceFailedWithErrorInTest()
         {
             RestResponse restResponse = Execute(GetNamespaceRequest);
             HttpStatusCode actualStatusCode = restResponse.StatusCode;

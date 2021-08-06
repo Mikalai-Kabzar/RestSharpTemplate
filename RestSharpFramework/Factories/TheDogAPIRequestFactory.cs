@@ -1,12 +1,19 @@
 ﻿using RestSharp;
 using RestSharpFramework.Models;
 using System;
+using System.Text.Json;
 
 namespace RestSharpFramework.Factories
 {
     public class TheDogAPIRequestFactory
     {
         private static string PRIVATE_TOKEN = Environment.GetEnvironmentVariable("TheDogApiKey", EnvironmentVariableTarget.User);
+
+        protected static readonly JsonSerializerOptions JsonOptions = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        };
 
         public static RestRequest GetListOfBreedsRequest()
         {
@@ -27,8 +34,8 @@ namespace RestSharpFramework.Factories
         {
             RestRequest RestRequest = new RestRequest("votes");
             RestRequest.Method = Method.POST;
-            RestRequest.AddJsonBody(vote);
             RestRequest.AddHeader("x-api-key", PRIVATE_TOKEN);
+            RestRequest.AddJsonBody(JsonSerializer.Serialize(vote, JsonOptions));
             return RestRequest;
         }
 

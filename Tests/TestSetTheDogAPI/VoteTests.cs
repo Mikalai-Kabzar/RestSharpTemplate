@@ -24,7 +24,7 @@ namespace Tests.TestSetTheDogAPI
             using (new AssertionScope())
             {
                 restVoteResponse.StatusCode.Should().Be(HttpStatusCode.OK);
-                voteResponse.message.Should().Be(successMessage);
+                voteResponse.Message.Should().Be(successMessage);
             }
         }
 
@@ -35,16 +35,16 @@ namespace Tests.TestSetTheDogAPI
             RestResponse restVoteResponse = Execute(PostVoteRequest(testVote));
             VotePostResponse votePostResponse = Deserialize<VotePostResponse>(restVoteResponse.Content);
 
-            RestResponse restVoteGetResponse = Execute(GetVoteRequest(votePostResponse.id));
+            RestResponse restVoteGetResponse = Execute(GetVoteRequest(votePostResponse.Id));
             VoteGetResponse voteGetResponse = Deserialize<VoteGetResponse>(restVoteGetResponse.Content);
 
             using (new AssertionScope())
             {
                 restVoteResponse.StatusCode.Should().Be(HttpStatusCode.OK);
-                voteGetResponse.id.Should().Be(votePostResponse.id);
-                voteGetResponse.image_id.Should().Be(testVote.image_id);
-                voteGetResponse.sub_id.Should().Be(testVote.sub_id);
-                voteGetResponse.value.Should().Be(testVote.value);
+                voteGetResponse.Id.Should().Be(votePostResponse.Id);
+                voteGetResponse.Image_id.Should().Be(testVote.Image_id);
+                voteGetResponse.Sub_id.Should().Be(testVote.Sub_id);
+                voteGetResponse.Value.Should().Be(testVote.Value);
             }
         }
 
@@ -55,7 +55,7 @@ namespace Tests.TestSetTheDogAPI
             RestResponse restVoteResponse = Execute(PostVoteRequest(testVote));
             VotePostResponse votePostResponse = Deserialize<VotePostResponse>(restVoteResponse.Content);
 
-            RestResponse restVoteDeleteResponse = Execute(DeleteVoteRequest(votePostResponse.id));
+            RestResponse restVoteDeleteResponse = Execute(DeleteVoteRequest(votePostResponse.Id));
             Dictionary<string, string> deleteResponse = Deserialize<Dictionary<string, string>>(restVoteDeleteResponse.Content);
             
             using (new AssertionScope())
@@ -72,8 +72,8 @@ namespace Tests.TestSetTheDogAPI
             RestResponse restVoteResponse = Execute(PostVoteRequest(testVote));
             VotePostResponse votePostResponse = Deserialize<VotePostResponse>(restVoteResponse.Content);
 
-            Execute(DeleteVoteRequest(votePostResponse.id));
-            RestResponse restVoteDeleteResponse = Execute(DeleteVoteRequest(votePostResponse.id));
+            Execute(DeleteVoteRequest(votePostResponse.Id));
+            RestResponse restVoteDeleteResponse = Execute(DeleteVoteRequest(votePostResponse.Id));
             Dictionary<string, object> deleteResponse = Deserialize<Dictionary<string, object>>(restVoteDeleteResponse.Content);
 
             using (new AssertionScope())

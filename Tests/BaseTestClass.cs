@@ -1,6 +1,7 @@
 ﻿using RestSharp;
 using System.Linq;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Tests
 {
@@ -15,9 +16,15 @@ namespace Tests
         {
             return response.Headers.FirstOrDefault(t => t.Name == headerName).Value.ToString();
         }
+        protected static readonly JsonSerializerOptions JsonOptions = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase, false) }
+        };
+
         protected T Deserialize<T>(string actualContent)
         {
-            return JsonSerializer.Deserialize<T>(actualContent);
+            return JsonSerializer.Deserialize<T>(actualContent, JsonOptions);
         }
     }
 }

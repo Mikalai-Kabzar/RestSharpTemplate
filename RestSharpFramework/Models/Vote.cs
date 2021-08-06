@@ -2,8 +2,8 @@
 {
     public class Vote
     {
-        public string image_id { get; set; }
-        public string sub_id { get; set; }
-        public int value { get; set; }
+        public string Image_id { get; set; }
+        public string Sub_id { get; set; }
+        public int Value { get; set; }
     }
 }

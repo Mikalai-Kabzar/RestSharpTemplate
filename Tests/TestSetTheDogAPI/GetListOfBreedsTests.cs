@@ -24,7 +24,7 @@ namespace Tests.TestSetTheDogAPI
         [Test]
         public void GetListOfBreedsTest()
         {
-            RestResponse restResponse = Execute(GetListOfBreadsRequest);
+            RestResponse restResponse = Execute(GetListOfBreedsRequest);
             HttpStatusCode actualStatusCode = restResponse.StatusCode;
             string actualContentType = GetHeader(restResponse, сontentTypeHeader);
             string actualContent = restResponse.Content.ToString();
@@ -37,14 +37,14 @@ namespace Tests.TestSetTheDogAPI
                 actualContentType.Should().Be(expectedContentType);
                 breedList.Count.Should().BeLessOrEqualTo(breedsNumber);
                 breedList.Count.Should().BeGreaterOrEqualTo(breedsNumber);
-                actualBreed.name.Should().Be(firstBreedName);
+                actualBreed.Name.Should().Be(firstBreedName);
             }
         }
 
         [Test]
         public void GetListOfBreedsTestFailed()
         {
-            RestResponse restResponse = Execute(GetListOfBreadsRequest);
+            RestResponse restResponse = Execute(GetListOfBreedsRequest);
             HttpStatusCode actualStatusCode = restResponse.StatusCode;
             string actualContentType = GetHeader(restResponse, сontentTypeHeader);
             string actualContent = restResponse.Content.ToString();
@@ -64,7 +64,7 @@ namespace Tests.TestSetTheDogAPI
         [Test]
         public void GetListOfBreedsBreadForTest()
         {
-            RestResponse restResponse = Execute(GetListOfBreadsRequest);
+            RestResponse restResponse = Execute(GetListOfBreedsRequest);
             HttpStatusCode actualStatusCode = restResponse.StatusCode;
             string actualAccessControl = GetHeader(restResponse, accessControlHeader);
             string actualContent = restResponse.Content.ToString();
@@ -79,7 +79,7 @@ namespace Tests.TestSetTheDogAPI
                 actualAccessControl.Should().Be(expectedAccessControlExpose);
                 breedList.Count.Should().Be(breedsNumber);
                 actualBreed[breedForField].ToString().Should().Be(expecteBreedFor);
-                actualBreedObject.bred_for.Should().Be(expecteBreedFor);
+                actualBreedObject.Bred_For.Should().Be(expecteBreedFor);
             }
         }
     }

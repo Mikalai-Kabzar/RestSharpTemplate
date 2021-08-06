@@ -12,7 +12,7 @@ namespace Tests.TestSetGitLab
     internal class FluentAssertionTests : BaseTestClassGitLab
     {
         private readonly string expectedContentType = "application/json";
-        private readonly string namespaceName = "Mikalai kabzar";
+        private readonly string namespaceName = "Mikalai kabzar";// type your own namespace information here 
         private readonly string wrongNamespaceName = "wrongNamespaceName";
         private readonly string сontentTypeHeaderName = "Content-Type";
         private readonly string namespaceNameField = "name";
@@ -32,7 +32,7 @@ namespace Tests.TestSetGitLab
             actualContentType.Should().Be(expectedContentType);
             namespaceList.Count.Should().BeLessOrEqualTo(namespacesNumber);
             namespaceList.Count.Should().BeGreaterOrEqualTo(namespacesNumber);
-            actualNamespace.name.Should().Be(namespaceName);
+            actualNamespace.Name.Should().Be(namespaceName);
         }
 
         [Test]

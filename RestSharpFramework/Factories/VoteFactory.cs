@@ -9,9 +9,9 @@ namespace RestSharpFramework.Factories
         {
             return new Vote
             {
-                image_id = "asf2",
-                sub_id = "my-user-1234",
-                value = 1
+                Image_id = "asf2",
+                Sub_id = "my-user-1234",
+                Value = 1
             };
         }
 
@@ -19,9 +19,9 @@ namespace RestSharpFramework.Factories
         {
             return new Vote
             {
-                image_id = "asf3",
-                sub_id = "my-user-1",
-                value = 0
+                Image_id = "asf3",
+                Sub_id = "my-user-1",
+                Value = 0
             };
         }
     }

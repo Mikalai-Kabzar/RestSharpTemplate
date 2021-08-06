@@ -17,17 +17,17 @@ namespace Tests.TestSetTheDogAPI
         public void Get12thBreedNameAndDataTest()
         {
             var numberOfBreedInList = 12;
-            RestResponse restResponseListOfBreeds = Execute(GetListOfBreadsRequest);
+            RestResponse restResponseListOfBreeds = Execute(GetListOfBreedsRequest);
             List<Breed> breedList = Deserialize<List<Breed>>(restResponseListOfBreeds.Content);
             var breedFromTheList = breedList[numberOfBreedInList - 1];
-            var name2ndBreedFromListRequest = breedFromTheList.name;
+            var name2ndBreedFromListRequest = breedFromTheList.Name;
 
-            RestResponse restResponseSearchQuery = Execute(GetBreadsByNameRequest(name2ndBreedFromListRequest));
+            RestResponse restResponseSearchQuery = Execute(GetBreedsByNameRequest(name2ndBreedFromListRequest));
             Breed breedFromSearchRequest = Deserialize<List<Breed>>(restResponseSearchQuery.Content).First();
 
             using (new AssertionScope())
             {
-                breedFromTheList.image = null;// as breed from the search query doesn't have 'image' part
+                breedFromTheList.Image = null;// as breed from the search query doesn't have 'image' part
                 restResponseSearchQuery.StatusCode.Should().Be(HttpStatusCode.OK);
                 breedFromSearchRequest.Should().BeEquivalentTo(breedFromTheList);
             }
@@ -37,7 +37,7 @@ namespace Tests.TestSetTheDogAPI
         public void GetNotExistingBreedNameAndDataTest()
         {
 
-            RestResponse restResponseSearchQuery = Execute(GetBreadsByNameRequest(notExistingBreedName));
+            RestResponse restResponseSearchQuery = Execute(GetBreedsByNameRequest(notExistingBreedName));
             List<Breed> breedListFromSearchRequest = Deserialize<List<Breed>>(restResponseSearchQuery.Content);
 
             using (new AssertionScope())
